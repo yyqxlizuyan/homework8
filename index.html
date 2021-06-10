@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top{
+            width:1200px;
+            background:black;
+            display:inline-flex;
+            flex-direction:row;
+            margin:0 auto;
+        }
+        .top>div{
+            color:white;
+            height:50px;
+            line-height:50px;
+            font-size:10px;
+            margin:5px 10px;
+        }
+        .top>div:nth-child(1){
+            margin-left:50px;
+        }
+        .top>div:nth-child(2){
+            color:orange;
+            font-size:20px;
+        }
+        .top>div:nth-child(3){
+            font-size:20px;
+        }
+        .top>div:nth-child(4){
+            font-size:20px;
+        }
+        .top>div:nth-child(5){
+            font-size:20px;
+        }
+        .top>div .imgs{
+            background:url("./images/播放器.png");
+            background-position:110px -25px;
+            height:20px;
+            width:30px;
+            margin-top:15px;
+            float:left;
+        }
+        .top>div .imga{
+            float:left;
+        }
+        .top>div:last-child .list{
+            width:5px;
+            height:30px;
+            margin:5px 5px;
+            float:left;
+        }
+        .top>div:last-child .search{
+            width:150px;
+            height:30px;
+            line-height:30px;
+            font-size:5px;
+            color:rgba(141, 135, 135, 0.5);
+            background: url("./images/搜索.png");
+            background-size: 150px 30px;
+            margin-top:10px;
+            float:left;
+        }
+        .middle .left{
+            float:left;
+            width:600px;
+            height:800px;
+            margin:50px 10px;
+        }
+        .middle .left .topic{
+            width:100px;
+            height:30px;
+            margin:0 auto;
+        }
+        .middle .left .information{
+            width:400px;
+            height:50px;
+            margin:20px;
+        }
+        .middle .left .information .singer{
+            width:400px;
+            height:25px;
+            margin-left:100px;
+        }
+        .middle .left .information .singer .zhuan{
+            float:left;
+            color:gray;
+        }
+        .middle .left .word{
+            color:orange;
+        }
+        .middle .left .word1{
+            color:black;
+        }
+        .middle .left .information .singer .ping{
+            float:left;
+        }
+        .middle .left .information .singer .ping .discuss{
+            width:15px;
+            height:15px;
+            background:url("./images/评论.jpg");
+            background-size:15px 15px;
+            float:left;
+            margin:2px 15px;
+        }
+        .middle .left .information .upda{
+            width:360px;
+            height:25px;
+            margin-left:110px;
+            font-size:14px;
+        }
+        .middle .left .information .singer .ping .word{
+            float:left;
+        }
+        .middle .left .lyric{
+            text-align:center;
+        }
+        .middle .right{
+            float:left;
+            width:500px;
+            height:800px;
+            margin:50px 50px;
+        }
+        .middle .right .covers{
+            width: 310px;
+            height: 310px;
+            border:1px solid gray;
+            border-radius:50% 50%;
+            margin:0 auto;
+            animation:animation1 5s linear infinite;
+        }
+        .middle .right .covers .cover{
+            width: 300px;
+            height: 300px;
+            border-radius:50% 50%;
+            background-image: url("images/喜羊羊.jpg");
+            background-size:300px 300px;
+            margin:5px 5px;
+        }
+        @keyframes animation1{
+            0%{
+                transform: rotate(0deg);    
+            }
+            100%{
+                transform: rotate(360deg);              
+            }
+        }    
+        .music{
+            width:400px;
+            height:100px;
+            margin:0 auto;
+        }
+        .music .play{
+            width:40px;
+            height:40px;
+            background:url("images/分享歌.jpg");
+            background-position:-110px 0px;
+            margin-top:30px;
+            margin-right:20px;
+            float:left;
+        }
+        .music .prograss{
+            float:left;
+            width:250px;
+            height:5px;
+            margin-top:45px;
+            position:relative;
+            display:inline;
+        }
+        .music .prograss .process{
+            width:250px;
+            height:5px;
+            background:whitesmoke;
+        }
+        .music .prograss .process .processbg{
+            width:0px;
+            height:5px;
+            background:orange;
+        }
+        .music .prograss .process .processer{
+            width:10px;
+            height:10px;
+            background:url("images/分享歌.jpg");
+            background-position:-95px 0px;
+            margin-top:-8px;
+            position:absolute;
+        }
+        .music .playtime{
+            font-size:10px;
+            width:40px;
+            height:40px;
+            color:grey;
+            line-height:40px;
+            text-align:center;
+            margin-top:30px;
+            float:left;
+        }
+        .music .volumn{
+            width:25px;
+            height:25px;
+            margin-top:40px;
+            background:url("images/分享歌.jpg");
+            background-position:-40px 0px;
+            float:left;
+        }
+        .load{
+            width:200px;
+            height:45px;
+            background:url("images/分享歌.jpg");
+            background-position:0px -130px;
+            margin:0 auto;
+            line-height:45px;
+            font-size:15px;
+            color:black;
+        }
+        .load>.download{
+            width:18px;
+            height:18px;
+            background:url("images/分享歌.jpg");
+            background-position:0px 0px;
+            background-origin:content-box;
+            margin-left:30px;
+            margin-top:13px;
+            float:left;
+        }
+        .roles{
+            width:400px;
+            height:100px;
+            margin:0 auto;
+        }
+        .roles>.role{
+            width:50px;
+            height:50px;
+            border-radius:50% 50%;
+            background:url("./images/郭子仪.jpg");
+            background-size:50px 50px;
+            float:left;
+            margin:20px;
+        }
+        .roles>.share{
+            width:250px;
+            height:60px;
+            background:url("./images/showAdBg.jpg");
+            background-size:250px 60px;
+            font-size:5px;
+            margin-top:20px;
+            float: left;
+        }
+        .roles>.share>.share1{
+            width:250px;
+            height:60px;
+            color:black;
+            float: left;
+            margin-left:15px;
+        }
+        .roles>.share>.share1 .guo{
+            width:250px;
+            height:20px;
+            color:grey;
+            margin:10px;
+        }
+        .roles>.share>.share1 .xi{
+            width:150px;
+            height:10px;
+            float: left;
+            margin-right:20px;
+        }
+        .roles>.share>.share1 .xi img{
+            width:10px;
+            height:10px;
+        }
+        .roles>.share>.share1 .xian{
+            width:80px;
+            height:10px;
+            float: left;
+            color:purple;
+        }
+        .buttom{
+            width:900px;
+            height:500px;
+            font-size:15px;
+            color:black;
+            margin:0 auto;
+        }
+       .numb{
+            width:100px;
+            height:10px;
+            font-size:5px;
+            color:grey;
+            margin-left:20px;
+        }
+        .tijiao{
+            width:850px;
+            height:100px;
+            margin:20px 50px;
+        }
+        .tijiao .user{
+            width:50px;
+            height:50px;
+            float:left;
+            margin-right:10px;
+        }
+       .user img{
+            width:50px;
+            height:50px;
+       }
+        .tijiao .jie{
+            width:780px;
+            height:70px;
+            border:1px solid grey;
+            float:left;
+        }
+        .tijiao .jie>input{
+           border:0;
+           outline:none;
+        }
+        .tijiao .emoji{
+            width:20px;
+            height:20px;
+            float:left;
+            margin-top:5px;
+            margin-left:60px;
+            background:url("images/emoji.png");
+            background-size:20px 20px;
+        }
+        .tijiao .count{
+            margin-top:5px;
+            float:left;
+            margin-left:630px;
+        }
+        .tijiao .count .sum{
+            font-size:5px;
+            color:grey;
+        }
+        .tijiao .count button{
+            border:0;
+            background: yellow;
+            text-align:center;
+            width:60px;
+            height:30px;
+        }
+        .liulan{
+            width:900px;
+            height:300px;
+        }
+        .wonder{
+            width:900px;
+            height:300px;
+        }
+        .wonder .first{
+            width:900px;
+            height:90px;
+            border-bottom: 1px solid gray;
+        }
+        .first .srcs{
+            background:url("images/郭子仪.jpg");
+            width:50px;
+            height:50px;
+            background-size:50px 50px;
+            margin-right:5px;
+            float:left;
+        }
+        .first .names{
+            width:760px;
+            height:90px;
+            float:left;
+            font-size:5px;
+            color:gray;
+        }
+        .names .name{
+            width:700px;
+            height:10px;
+            margin-bottom:5px;
+            float:left;
+            color:orange;
+        }
+        .names .xiang{
+            width:50px;
+            height:15px;
+            font-size:10px;
+            margin-bottom:5px;
+            float:left;
+        }
+        .names .neirong{
+            width:740px;
+            height:50px;
+            float:none;
+            clear:both;
+            margin-left:10px;
+            color:black;
+        }
+        .names .time{
+            width: 600px;
+            height:15px;
+            float:left;
+        }
+        .names>.delete{
+            width:40px;
+            height:15px;
+            float:left;
+        }
+        .names>.good{
+            width:50px;
+            height:15px;
+            float:left;
+        }
+        .names>.good>.goods{
+            width:35px;
+            height:15px;
+            float:left;
+        }
+        .names>.good>.zan{
+            width:15px;
+            height:15px;
+            background:url("images/bg3.jpg");
+            background-size:15px 15px;
+            float:right;
+        }
+        .names .answer{
+            width:40px;
+            height:10px;
+            margin-left:10px;
+            float:left;
+        }
+        .page{
+            width:250px;
+            height:20px;
+            font-size:5px;
+            color:black;
+            margin:0 auto;
+        }
+        .page>div{
+            width:20px;
+            height:20px;
+            border-radius:50% 50%;
+            background-color: lightgrey;
+            line-height:20px;
+            text-align:center;
+            margin-left:10px;
+            float:left;
+        }
+        .page .prev{
+            width:6px;
+            height:11px;
+            margin-top:5px;
+            background:url(./images/prev.png);
+            background-size: 6px 11px;
+        }
+        .page .next{
+            width:6px;
+            height:11px;
+            margin-top:5px;
+            background:url(./images/next.png);
+            background-size: 6px 11px;
+        }
+        .page .one{
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div><img src="./images/酷我.jpg"></div>
+        <div>首页</div>
+        <div>榜单</div>
+        <div>歌手</div>
+        <div>下载酷我客户端</div>
+        <div clsss="imgObj">
+            <div class="imgs"></div>
+            <div class="imga">美女秀</div>
+        </div>
+        <div clsss="imgObj">
+            <div class="imgs"></div>
+            <div class="imga">酷我耳机</div>
+        </div>
+        <div clsss="imgObj">
+            <div class="imgs"></div>
+            <div class="imga">VIP会员</div>
+        </div>
+        <div clsss="imgObj">
+            <div class="imgs"></div>
+            <div class="imga">i听</div>
+        </div>
+        <div>更多服务</div>
+        <div>登录</div>
+        <div>
+            <div class="list">^</div>
+            <div class="search">
+                找到好音乐
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="left">
+            <div class="topic">
+                <h3>喜羊羊</h3>
+            </div>
+            <div class="information">
+                <div class="singer">
+                    <div class="zhuan">
+                        专辑：
+                        <span class="word">儿歌大全</span > 
+                        歌手：
+                        <span class="word">华语群星</span> 
+                        <span class="word1">分享</span>
+                    </div>
+                    <div class="ping"> 
+                        <div class="discuss"></div>
+                        <div class="word">评论</div>
+                    </div>
+                </div>
+                <div class="upda">
+                    <p>上传时间：2015-10-02 歌曲来源：民大相思湖网球社</p>
+                </div>
+            </div>
+            <hr>
+            <div class="lyric">
+                <p>喜羊羊美羊羊懒羊羊沸羊羊</p>
+                <p>慢羊羊软绵绵红太狼灰太狼</p>
+                <p>别看我只是一只羊</p>
+                <p>绿草因为我变的更香</p>
+                <p>天空因为我变的更蓝</p>
+                <p>白云因为我变的柔软</p>
+                <p>别看我只是一只羊</p>
+                <p>羊儿的聪明难以想像</p>
+                <p>天再高心情一样奔放</p>
+                <p>每天都追赶太阳</p>
+                <p class="word">有什么难题 去牵绊我 都不会去心伤</p>
+                <p>有什么危险 在我面前 也不会去慌乱</p>
+                <p>就算有狼群 把我追捕 也当做游戏一场</p>
+                <p>在什么时间 都爱开心 笑容都会飞翔</p>
+                <p>就算会摔倒 站得起来 永远不会沮丧</p>
+                <p>在所有天气 拥有叫人 大笑的力量</p>
+                <p>虽然我只是羊</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="covers">
+                <div class="cover"></div>
+            </div>
+            <div class="music">
+                <audio autoplay="autoplay" id="mymusic">
+                    <source src="./images/2.mp3" type="audio/mp3">
+                </audio>
+                <div class="play" id="play"></div>
+                <div class="prograss">
+                    <div class="process">
+                        <div class="processbg" id="processbg"></div>
+                        <a href="#" class="processer" id="processbar"></a>
+                    </div>
+                </div>
+                <div class="playtime" id="playtime">
+                    00:00
+                </div>
+                <div class="volumn" id="mute"></div>
+            </div>
+            <div class="load">
+                <div class="download"></div>                                                            
+                免费下载这首歌
+            </div>
+            <div class="roles">
+                <div class="role"></div>
+                <div class="share">
+                    <div class="share1">
+                        <div class="guo">郭子仪——H5班</div>
+                        <div class="xi">
+                            <img src="./images/gif.gif">喜羊羊与灰太狼</div>
+                        <div class="xian">去现场></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttom">
+            评论
+            <span class="numb" id="count">0条评论</span>
+       <hr> 
+        <div class="tijiao">
+            <div class="user">
+                <img src="images/郭子仪.jpg" id="imgs" name="郭子仪">
+            </div>
+            <div class="jie">
+                <input type="text" class="put" placeholder="分享你的音乐见解" id="contents">
+            </div>
+            <div class="emoji"></div>
+            <div class="count">
+                <span class="sum" id="word">已输入0个字</span>
+                <button id="btn">评论</button>
+            </div>
+        </div>
+        <div class="liulan">
+            精彩评论
+            <hr>
+            <div class="wonder" id="wonder">
+                <div class="page">
+                    <div class="prev"></div>
+                    <div class="one">1</div>
+                    <div class="two">2</div>
+                    <div class="three">3</div>
+                    <div class="more">...</div>
+                    <div class="seven">17</div>
+                    <div class="next"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var mymusic=document.getElementById("mymusic");
+        var play=document.getElementById("play");
+        var mute=document.getElementById("mute");
+        var time=document.getElementById("playtime");
+        var process=document.getElementById("processbar");
+        var prograss=document.getElementById("processbg");
+        var imgs=document.getElementById("imgs");
+        var pro;
+        play.onclick=function (){
+            if(mymusic.paused){
+                mymusic.play();
+                play.style.backgroundPositionX=-207+"px";
+                play.style.backgroundPositionY=0+"px";
+                pro=setInterval(function(){
+                    timeroll(time,mymusic);                          
+                    prograss.style.width=(mymusic.currentTime/mymusic.duration)*250+"px";
+                    process.style.marginLeft=(mymusic.currentTime/mymusic.duration)*250+"px"; 
+                },1000);
+            }else{
+                mymusic.pause();
+                play.style.backgroundPositionX=-110+"px";
+                play.style.backgroundPositionY=0+"px";
+                clearInterval(pro);
+            }
+        } 
+        mute.onclick=function(){
+            if(!mymusic.muted){
+                mymusic.muted=true;
+            }else{
+                mymusic.muted=false;
+            }
+        }
+        function timeroll(times,music){
+            if(music.currentTime<10){
+            times.innerHTML="00:0"+Math.floor(music.currentTime);
+            }else if(music.currentTime<60){
+            times.innerHTML="00:"+Math.floor(music.currentTime);
+            }else{
+                var minet=parseInt(music.currentTime/60);
+                var sec=music.currentTime-minet*60;
+                if(sec<10)
+                {
+                    times.innerHTML="0"+minet+":"+"0"+parseInt(sec);
+                }else{
+                    times.innerHTML="0"+minet+":"+parseInt(sec);
+                }
+            }
+        }      
+        var count=document.getElementById("count");
+        var imgs=document.getElementById("imgs");
+        var word=document.getElementById("word");
+        var contents=document.getElementById("contents");
+        var btn=document.getElementById("btn");
+        var wonder=document.getElementById("wonder");
+        var counts=0;
+        var obj2;;
+        var icount;
+        var arr=[];
+        contents.onkeyup=function(){
+            icount=setInterval(
+            function(){
+                counts=contents.value.length;
+                word.innerHTML="已输入"+counts+"个字";
+            },1000);
+        }
+        function dis(){
+            var dateTime;
+            var yy = new Date().getFullYear()
+            var mm = new Date().getMonth() + 1< 10 ? '0' + new Date().getMonth():new Date().getMonth()
+            var dd = new Date().getDate()
+            var hh = new Date().getHours()
+            var mf = new Date().getMinutes() < 10 ? '0' + new Date().getMinutes():new Date().getMinutes()
+            var ss = new Date().getSeconds() < 10 ? '0' + new Date().getSeconds():new Date().getSeconds()
+            dateTime = yy + '-' + mm + '-' + dd + ' ' + hh + ':' + mf + ':' + ss; 
+            var obj1=JSON.stringify(localStorage['obj']);
+            if(localStorage['obj']==null||localStorage['obj']==undefined){
+                localStorage['obj']="[]";
+            }
+            obj1=JSON.parse(localStorage['obj']);
+            var obj={
+                'src':imgs.src,
+                'name':imgs.name,
+                'neirong':contents.value,
+                'time':dateTime
+            }
+            obj1.push(obj);
+            localStorage["obj"]=JSON.stringify(obj1);
+        }
+        btn.onclick=function(){
+            var ping=document.createElement("div");
+            var srcs=document.createElement("div");
+            var names=document.createElement("div");
+            var namer=document.createElement("div");
+            var xiang=document.createElement("div");
+            var neirong=document.createElement("div");
+            var time=document.createElement("div");
+            var deletes=document.createElement("div");
+            var good=document.createElement("div");
+            var goods=document.createElement("div");
+            var zan=document.createElement("div");
+            var answer=document.createElement("div");
+            ping.className="first";
+            srcs.className="srcs";
+            names.className="names";
+            namer.className="name";
+            xiang.className="xiang";
+            neirong.className="neirong";
+            time.className="time";
+            deletes.className="delete";
+            good.className="good";
+            goods.className="goods";
+            zan.className="zan";
+            answer.className="answer";
+            wonder.prepend(ping);
+            ping.appendChild(srcs);
+            ping.appendChild(names);
+            names.appendChild(namer);
+            names.appendChild(xiang);
+            names.appendChild(neirong);
+            names.appendChild(time);
+            names.appendChild(deletes);
+            names.appendChild(good);
+            names.appendChild(answer);
+            good.appendChild(goods);
+            good.appendChild(zan);
+            dis();
+            var obj2=JSON.parse(localStorage['obj']);
+            srcs.style.backgroundImage=obj2[obj2.length-1]['src'];
+            namer.innerHTML=obj2[obj2.length-1]['name'];
+            xiang.innerHTML="分享";
+            neirong.innerHTML=obj2[obj2.length-1]['neirong'];
+            time.innerHTML=obj2[obj2.length-1]['time'];
+            deletes.innerHTML="删除";
+            goods.innerHTML=1;
+            answer.innerHTML="回复";
+            contents.value="";
+            count.innerHTML=obj2.length+"条评论"
+            clearInterval(icount);
+            word.innnerHTML="已输入0个字";
+        }
+        window.onload=function(){
+            var localStr=localStorage['obj'];
+            if(typeof localStr!="undefined"){
+                obj2=JSON.parse(localStr);
+                for(var i=0;i<obj2.length;i++){
+                    var ping=document.createElement("div");
+                    var srcs=document.createElement("div");
+                    var names=document.createElement("div");
+                    var namer=document.createElement("div");
+                    var xiang=document.createElement("div");
+                    var neirong=document.createElement("div");
+                    var time=document.createElement("div");
+                    var deletes=document.createElement("div");
+                    var good=document.createElement("div");
+                    var goods=document.createElement("div");
+                    var zan=document.createElement("div");
+                    var answer=document.createElement("div");
+                    ping.className="first";
+                    srcs.className="srcs";
+                    names.className="names";
+                    namer.className="name";
+                    xiang.className="xiang";
+                    neirong.className="neirong";
+                    time.className="time";
+                    deletes.className="delete";
+                    good.className="good";
+                    goods.className="goods";
+                    zan.className="zan";
+                    answer.className="answer";
+                    wonder.prepend(ping);
+                    ping.appendChild(srcs);
+                    ping.appendChild(names);
+                    names.appendChild(namer);
+                    names.appendChild(xiang);
+                    names.appendChild(neirong);
+                    names.appendChild(time);
+                    names.appendChild(deletes);
+                    names.appendChild(good);
+                    names.appendChild(answer);
+                    good.appendChild(goods);
+                    good.appendChild(zan);
+                    var obj3=JSON.parse(localStorage['obj']);
+                    srcs.style.backgroundImage=obj3[obj3.length-i-1]['src'];
+                    namer.innerHTML=obj3[obj3.length-i-1]['name'];
+                    xiang.innerHTML="分享";
+                    neirong.innerHTML=obj3[obj3.length-i-1]['neirong'];
+                    time.innerHTML=obj3[obj3.length-i-1]['time'];
+                    deletes.innerHTML="删除";
+                    goods.innerHTML=1;
+                    answer.innerHTML="回复";
+                    contents.value="";
+                    count.innerHTML=obj3.length+"条评论"
+                }
+            }
+        }
+    </script>
+</body>
+</html>
